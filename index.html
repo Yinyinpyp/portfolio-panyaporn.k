@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panyaporn Portfolio</title>
+    <link rel="stylesheet" href="css1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tuffy:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Joan&display=swap" rel="stylesheet">
+<body>
+    <style>
+        body {
+            background-color: #ffffff; 
+            color: #333; 
+
+        }
+
+
+    </style>
+
+    <script>
+      function revealOnScroll() {
+        const reveals = document.querySelectorAll('.reveal-on-scroll');
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150; 
+  
+        reveals.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          if (top < windowHeight - revealPoint) {
+            el.classList.add('visible');
+          }
+        });
+      }
+  
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
+    </script>
+  
+  
+    
+    
+    
+
+
+
+    <header>
+
+        
+
+        <nav>
+          <ul>
+            <h1>Portfolio</h1>
+            <li><a href="#aboutme" class="nav-link">About Me</a></li>
+            <li><a href="#project" class="nav-link">Project</a></li>
+            <li><a href="#Certificates" class="nav-link">Certificates</a></li>
+            <li><a href="#contect1" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        
+        
+        
+        <script>
+          const sections = document.querySelectorAll("a");
+const navLinks = document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  navLinks.forEach((link) => {
+    const section = document.querySelector(link.getAttribute("href")); 
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+      current = link.getAttribute("href").substring(1); 
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").substring(1) === current) {
+      link.classList.add("active"); 
+    }
+  });
+});
+
+            let lastScrollTop = 0;
+            const header = document.querySelector("header");
+          
+            window.addEventListener("scroll", function () {
+              const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+          
+              if (currentScroll > lastScrollTop) {
+                
+                header.classList.add("hide-header");
+              } else {
+               
+                header.classList.remove("hide-header");
+              }
+          
+              lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            });
+          </script>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) { 
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
+          
+    </header>
+
+    <video id="video-background" autoplay loop muted playsinline>
+        <source src="images/istockphoto-1264267083-640_adpp_is.mp4">
+        
+        <source src="your-video-file.webm" type="video/webm">
+    </video>
+
+                    
+    <section>
+
+
+
+
+        <main>
+            </div>
+            <section class="intro"> 
+              <h1 class="animated-title"> <span id="typewriter"></span></h1>
+
+                <p class="animated-text"> UX UI Website Design Developer & frontend</p>
+                <p1 class="animated-text">Bachelor's degree School of Information Technology and Innovation, Bangkok University.<br></p1>
+                <button class="resume-btn" onclick="downloadImage()">Resume</button>
+                <div class="icon-container">
+                    <a href="https://www.facebook.com/yinnpyp/" target="_blank">
+                      <img src="images/1icon.png" alt="Icon 1" class="clickable-icon">
+                    </a>
+                    <a href="https://www.instagram.com/yinnpyp/" target="_blank">
+                      <img src="images/2icon.png" alt="Icon 2" class="clickable-icon">
+                    </a>
+                    <a href="https://www.facebook.com/yinnpyp/" target="_blank">
+                      <img src="images/icon3.png" alt="Icon 3" class="clickable-icon">
+                    </a>
+                    <a href="https://github.com/Yinyinpyp" target="_blank">
+                      <img src="images/icon4.png" alt="Icon 3" class="clickable-icon">
+                    </a>
+                    <a href="https://www.linkedin.com/in/panyaporn-kiatrungrit-bb5206328/" target="_blank">
+                      <img src="images/icon5.png" alt="Icon 3" class="clickable-icon">
+                    </a>
+                  </div>
+                  
+
+                  <script>
+                    const phrases = ["Panyaporn Kiatrungrit", "Yin"];
+                    let currentPhrase = 0;
+                    let currentChar = 0;
+                    const typewriterElement = document.getElementById("typewriter");
+                  
+                    function type() {
+                      const currentText = phrases[currentPhrase];
+                      const fullLength = currentText.length;
+                      typewriterElement.textContent = currentText.substring(0, currentChar).padEnd(fullLength, ' ');
+                  
+                      if (currentChar < fullLength) {
+                        currentChar++;
+                        setTimeout(type, 150);
+                      } else {
+                        setTimeout(erase, 2000); 
+                      }
+                    }
+                  
+                    function erase() {
+                      const currentText = phrases[currentPhrase];
+                      const fullLength = currentText.length;
+                      typewriterElement.textContent = currentText.substring(0, currentChar).padEnd(fullLength, ' ');
+                  
+                      if (currentChar > 0) {
+                        currentChar--;
+                        setTimeout(erase, 100);
+                      } else {
+                        currentPhrase = (currentPhrase + 1) % phrases.length;
+                        setTimeout(type, 500);
+                      }
+                    }
+                  
+                    type();
+                  </script>
+                  
+                
+
+
+                <script>
+                    function downloadImage() {
+                      
+                      const link = document.createElement('a');
+                      link.href = 'images/resuma1.pdf'; 
+                      link.download = 'images/resuma1.pdf'; 
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }
+                    </script>
+                    
+            </section>
+
+                <section class="intro" id="aboutme">
+                    <img src="images/download-2.png" alt="Panyaporn Picture" class="profile-pictureimg">
+                    
+                </section>
+                <section class="skills">
+                  <div class="skills-container">
+                    
+                   
+                    <img src="images/download-3.png" alt="Panyaporn" class="floating-image">
+                    
+                   
+                      <h1 class="cascadia-mono" id="animatedText">
+                      
+                      
+                     
+                      Hello! I’m Panyaporn, a student at the Faculty of Information Technology and Innovation, </span><br>Bangkok University. </span><br>I’m passionate about web development and technology.</span><br>
+                    </span><br>I’m seeking an internship to grow my skills in Frontend and Backend Development.</span><br><br>
+                      
+                     I have experience with HTML, CSS, JavaScript, UX/UI, GUI design, and website design, </span><br>as well as C++, Python, MySQL, and Node.js.</span><br><br>
+                      
+                     I’m eager to apply my skills and enthusiasm in a dynamic team environment.</span>
+                      </h1>
+                      
+                    <button class="intro-btn" onclick="toggleLanguage()">สลับภาษา / Toggle Language</button>
+                  </section>
+                  
+                  
+                  
+                  
+                  <script>
+                    
+                    
+                    const textElement = document.getElementById("animatedText");
+                  
+                    const thaiText = `
+                       Hello! I’m Panyaporn, a student at the Faculty of Information Technology and Innovation, Bangkok University. </span><br>I’m passionate about web development and technology.</span><br>
+                    </span><br>I’m seeking an internship to grow my skills in Frontend and Backend Development.</span><br><br>
+                      
+                     I have experience with HTML, CSS, JavaScript, UX/UI, GUI design, and website design, </span><br>as well as C++, Python, MySQL, and Node.js.</span><br><br>
+                      
+                     I’m eager to apply my skills and enthusiasm in a dynamic team environment.</span>
+                      </h1>
+                      
+                    `;
+                    
+
+                    const englishText = `
+                      <span>สวัสดีค่ะ! ฉันชื่อปัญญาพร กำลังศึกษาอยู่ที่คณะเทคโนโลยีสารสนเทศและนวัตกรรม
+                      มหาวิทยาลัยกรุงเทพ ฉันเป็นคนที่มีความหลงใหล</span><br>ในด้านการพัฒนาเว็บไซต์และสนใจในเทคโนโลยีและนวัตกรรมอย่างต่อเนื่อง
+                      ขณะนี้ฉันกำลังมองหาโอกาสฝึกงานเพื่อพัฒนาทักษะ</span><br>ในด้าน Frontend และ Backend Development<br><br>
+                      ฉันมีประสบการณ์ในการทำงานกับเทคโนโลยีเว็บไซต์ เช่น HTML, CSS และ JavaScrip, UX/UI, การออกแบบ GUI </span><br>และการออกแบบเว็บไซต์
+                      และยังมีความคุ้นเคยกับภาษา C++ และ Python
+                      รวมถึงมีประสบการณ์การทำงานกับ MySQL และ Node.js<br><br>
+                    `;
+                  
+                    let isThai = true;
+                  
+                    function toggleLanguage() {
+                      textElement.innerHTML = isThai ? englishText : thaiText;
+                      isThai = !isThai;
+                    }
+                  </script>
+                 
+                <script>
+                  function revealOnScroll() {
+                    const reveals = document.querySelectorAll('.reveal');
+                    const windowHeight = window.innerHeight;
+                    const revealPoint = 100;
+                
+                    reveals.forEach((element) => {
+                      const elementTop = element.getBoundingClientRect().top;
+                
+                      if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');
+                      }
+                    });
+                  }
+                
+                  window.addEventListener('scroll', revealOnScroll);
+                  window.addEventListener('load', revealOnScroll);
+                </script>
+                
+
+                </section>
+                <section class="Service reveal">
+                  <h1>My Service</h1>
+                  <img class="reveal" src="images/2.png" alt="Service Image">
+                  <img class="reveal" src="images/3.png" alt="Service Image">
+                  <img class="reveal" src="images/5.png" alt="Service Image">
+                  <img class="reveal" src="images/4.png" alt="Service Image">
+                </section>
+                
+                <script>
+                  function revealOnScroll() {
+                    const reveals = document.querySelectorAll('.reveal');  
+                    const windowHeight = window.innerHeight; 
+                    const revealPoint = 100;  
+                
+                    reveals.forEach((element) => {
+                      const elementTop = element.getBoundingClientRect().top;  
+                
+                      
+                      if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');  
+                      }
+                    });
+                  }
+                
+                  window.addEventListener('scroll', revealOnScroll);  
+                  window.addEventListener('load', revealOnScroll);  
+                </script>
+                
+                  
+                <section class="project2" id="project"> 
+                  <h1>My Projects</h1>
+                  <div class="image-grid">
+                      <a href="https://www.figma.com/proto/hpAAdDjaNkSyJhGRK2VXIX/Project-IT446?node-id=2-2&starting-point-node-id=2%3A2">
+                          <img src="images/p1.png" alt="Project 2" class="project-image"></a>
+                          <a href="https://www.figma.com/proto/sjjnIaPcrHep9XPnGAaRMH/Untitled?node-id=1-384&starting-point-node-id=1%3A384">
+                            <img src="images/p2.png" alt="Project 2" class="project-image">
+                          </a>
+                    
+                      <a href="https://glrlyclassic.my.canva.site">
+                        <img src="images/p3.png" alt="Project 2" class="project-image">
+                      </a>
+                      <a href="https://www.youtube.com/watch?v=djnAnj6zRw0">
+                        <img src="images/p4.png" alt="Project 2" class="project-image">
+                      </a>          
+                      <a href="https://ohmmyjub.github.io/Bu-open-house/">
+                        <img src="images/p5.png" alt="Project 2" class="project-image">
+                      </a>
+                      <a href="upload/index.html">
+                        <img src="images/p7.png" alt="Project 2" class="project-image">
+                      </a>
+                      
+
+                      <a href="https://glrlyclassic.my.canva.site">
+                        <img src="images/7p1.png" alt="Project 2" class="project-image">
+                      </a>
+                      <a href="https://www.figma.com/proto/z8eVX8pwT08V6bXT9bL8GK/1649796238_Prototype?node-id=10-267&t=FC2Ed6KHQQWfTzgW-1">
+                        <img src="images/p8.png" alt="Project 2" class="project-image">
+                      </a>
+                      <a href="https://www.canva.com/design/DAF59G8pxcc/ZwReMDQo1I8Be9EFCnEJIQ/edit?utm_content=DAF59G8pxcc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+                        <img src="images/p9.png" alt="Project 2" class="project-image">
+                      </a>
+
+
+
+                    </div>
+                    
+                      
+                    </section>
+                  </section>
+                  <script>
+                    function revealOnScroll() {
+                      const images = document.querySelectorAll('.project2 img');
+                      const windowHeight = window.innerHeight;
+                  
+                      images.forEach((img) => {
+                        const elementTop = img.getBoundingClientRect().top;
+                        if (elementTop < windowHeight - 100) {
+                          img.classList.add('visible');
+                        }
+                      });
+                    }
+                  
+                    window.addEventListener('scroll', revealOnScroll);
+                    window.addEventListener('load', revealOnScroll);
+                  </script>
+            <script>
+              function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+            
+                reveals.forEach((element) => {
+                  const elementTop = element.getBoundingClientRect().top;
+            
+                  if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                  }
+                });
+              }
+            
+              window.addEventListener('scroll', revealOnScroll);
+              window.addEventListener('load', revealOnScroll);
+            </script>
+
+<section class="skill reveal">
+  <h1>My Skill</h1>
+  <div class="skill-grid">
+    <img src="images/skill1.png">
+    <img src="images/skill2.png">
+    <img src="images/skill3.png">
+    <img src="images/skill4.png">
+    <img src="images/skill5.png">
+    <img src="images/skill6.png">
+  </div>
+</section>
+            <script>
+              function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const revealPoint = 150;
+            
+                reveals.forEach((element) => {
+                  const elementTop = element.getBoundingClientRect().top;
+            
+                  if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                  }
+                });
+              }
+            
+              window.addEventListener('scroll', revealOnScroll);
+              window.addEventListener('load', revealOnScroll);
+            </script>
+          
+          <section class="Certificates reveal" id="Certificates">
+            <h1>Certificates</h1>
+            <img src="images/Screenshot 2568-05-11 at 20.23.04.png">
+            <img src="images/Screenshot 2568-05-09 at 01.15.02.png">
+          </section>
+            
+
+
+            
+
+            <section class="contect1" id="contect1">
+                <img src="images/contact us.png" alt="Contact Image">
+                
+                <div class="text-box">
+                    <input type="text" id="input1" placeholder="Name *">
+                    <input type="text" id="input2" placeholder="Email *">
+                    <input type="text" id="input3" placeholder="Message *">
+                    <button class = "send" onclick="showValues()">Send messnge</button>
+                </div>
+                
+
+                <div id="displayValues">
+                    
+                </div>
+
+                <script>
+                    function showValues() {
+                      const input1 = document.getElementById('input1');
+                      const input2 = document.getElementById('input2');
+                      const input3 = document.getElementById('input3');
+                    
+                      
+                      input1.placeholder = input1.value;
+                      input2.placeholder = input2.value;
+                      input3.placeholder = input3.value;
+                    
+                    
+                      input1.value = '';
+                      input2.value = '';
+                      input3.value = '';
+                    }
+
+                    
+                    </script>
+                    
+
+                    
+                    
+            </section>
+            
+
+                
+
+
+
+                
+
+
+            
+
+        </main>
+
+          
+    
+
+   
+    <footer>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email</strong><br>
+                panyapon.k@gmail.com
+            </div>
+            <div class="contact-item">
+                <strong>Phone Number</strong><br>
+                090-3269451
+            </div>
+            <div class="contact-item">
+                <strong>Line</strong><br>
+                yinyinpyp
+            </div>
+            <div class="contact-item">
+                <strong>Location</strong><br>
+                Jomthong City
+            </div>
+            
+
+        </div>
+    </footer>
+</body>
+</html>
